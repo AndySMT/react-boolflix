@@ -1,11 +1,14 @@
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Main from "./components/Main";
+import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Main></Main>
+      <GlobalProvider>
+        <Header></Header>
+        <Main></Main>
+      </GlobalProvider>
     </>
   );
 }
