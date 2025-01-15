@@ -4,7 +4,13 @@ export default function Header() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setQuery(e.target.value);
+    const searchValue = e.target.elements.searchInput.value.trim();
+    setQuery(searchValue);
+  };
+  const searchOnEnter = (e) => {
+    if (e.key === "Enter") {
+      handleSearch(e);
+    }
   };
 
   return (
@@ -12,7 +18,7 @@ export default function Header() {
       <div>
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand">Navbar</a>
+            <a className="navbar-brand">BoolFlix</a>
             <div className="d-flex align-items-center">
               <div className="dropdown me-2">
                 <button
@@ -41,9 +47,15 @@ export default function Header() {
                   </li>
                 </ul>
               </div>
-              <form className="d-flex" role="search" onSubmit={handleSearch}>
+              <form
+                className="d-flex"
+                role="search"
+                onSubmit={handleSearch}
+                onKeyUp={searchOnEnter}
+              >
                 <input
                   className="form-control me-2"
+                  name="searchInput"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
