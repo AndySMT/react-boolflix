@@ -5,7 +5,7 @@ import Card from "./Card";
 export default function MySwiper({ data }) {
   return (
     <Swiper
-      /* spaceBetween={10} */
+      spaceBetween={10}
       slidesPerView={6}
       loop={true}
       onSlideChange={() => console.log("slide change")}

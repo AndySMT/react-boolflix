@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
   const [flag, setFlag] = useState({});
 
   useEffect(() => {
-    const searchQuery = query.trim() || "popular";
+    const searchQuery = query.trim() || "smurfs";
     console.log(searchQuery);
     axios
       .get(apiUrl + moviePath, {

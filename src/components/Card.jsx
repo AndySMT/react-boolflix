@@ -15,7 +15,7 @@ export default function Card({ data }) {
   const { flag } = useGlobalContext();
   const flags = (language) => {
     if (flag[language]) {
-      return <img className="flag" src={flag[language]} alt={language} />;
+      return <img id="flag" src={flag[language]} alt={language} />;
     }
     return "🌐";
   };
@@ -54,7 +54,9 @@ export default function Card({ data }) {
           {/* Voto: {data.vote_average} */}
           {star()}
         </p>
-        {/* <p className="card-text">{data?.overview || "Non vaaaaaaaaaa"}</p> */}
+        <p className="card-text">
+          {data?.overview.slice(0, 200) || "Non vaaaaaaaaaa"}
+        </p>
       </div>
     </div>
   );
