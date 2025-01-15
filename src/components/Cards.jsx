@@ -33,10 +33,13 @@ export default function Cards() {
 
   return (
     <>
-      <h1>Film</h1>
-      <MySwiper data={movies} />
-      <h1>Series</h1>
-      <MySwiper data={tv} />
+      <div className="cards">
+        <h1 className="d-flex justify-content-center">Film</h1>
+        <MySwiper data={movies} />
+
+        <h1 className="m-3 d-flex justify-content-center">Series</h1>
+        <MySwiper data={tv} />
+      </div>
     </>
   );
 }

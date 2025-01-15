@@ -15,9 +15,7 @@ export default function Card({ data }) {
   const { flag } = useGlobalContext();
   const flags = (language) => {
     if (flag[language]) {
-      return (
-        <img src={flag[language]} alt={language} style={{ width: "50px" }} />
-      );
+      return <img className="flag" src={flag[language]} alt={language} />;
     }
     return "🌐";
   };
@@ -47,7 +45,7 @@ export default function Card({ data }) {
       <div className="card-body">
         <h5 className="card-title">{data?.title || data?.name}</h5>
         {/* <p className="text-danger">{data.title}</p> */}
-        <p className="">{data?.originatal_title || data?.original_name}</p>
+        <p className="">{data?.original_title || data?.original_name || ""}</p>
         <p className="">
           {/* {data?.original_language || data?.original_language} */}
           {flags(data.original_language)}

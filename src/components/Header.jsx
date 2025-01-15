@@ -15,10 +15,10 @@ export default function Header() {
 
   return (
     <>
-      <div>
-        <nav className="navbar bg-body-tertiary">
+      <div className="containerNav">
+        <nav className="navbar">
           <div className="container-fluid">
-            <a className="navbar-brand">BoolFlix</a>
+            <a className="navbar-brand text-danger">Boolflix</a>
             <div className="d-flex align-items-center">
               <div className="dropdown me-2">
                 <button
@@ -60,7 +60,7 @@ export default function Header() {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button className="btn btn-outline-success" type="submit">
+                <button className="btn btn-danger" type="submit">
                   Search
                 </button>
               </form>

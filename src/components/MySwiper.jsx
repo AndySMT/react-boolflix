@@ -1,21 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Card from "./Card";
 
 export default function MySwiper({ data }) {
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={5} // Puoi modificare questo valore per controllare quante slide si vedono
+      /* spaceBetween={10} */
+      slidesPerView={6}
+      loop={true}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
       {data.map((item) => (
-        <SwiperSlide key={item.id}>
-          {item.title}
-          <img
-            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-            alt={item.title}
-          />
+        <SwiperSlide key={item.id} style={{ padding: "10px" }}>
+          <Card data={item} />
         </SwiperSlide>
       ))}
     </Swiper>
